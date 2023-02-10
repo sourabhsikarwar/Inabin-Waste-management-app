@@ -2,7 +2,7 @@ import React from 'react'
 
 const RequestPickup = () => {
   return (
-    <div>RequestPickup</div>
+    <div></div>
   )
 }
 

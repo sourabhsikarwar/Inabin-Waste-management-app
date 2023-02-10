@@ -1,13 +1,14 @@
-import React from 'react'
+import React from "react";
+import Navbar from "./Components/collector/Navbar";
+import Request from "./Pages/collector/Request";
 
 const App = () => {
   return (
-    <div>
-        <h1 className='text-3xl text-green'>Hello World</h1>
-        <h1 className='text-3xl text-yellow'>Hello World</h1>
-        <h1 className='text-3xl text-blue'>Hello World</h1>
-    </div>
-  )
-}
+    <>
+      <Navbar />
+      <Request />
+    </>
+  );
+};
 
-export default App
+export default App;

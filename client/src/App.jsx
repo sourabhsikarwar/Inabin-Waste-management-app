@@ -1,14 +1,16 @@
-import React from "react";
-import Navbar from "./Components/collector/Navbar";
-import Request from "./Pages/collector/Request";
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+// Pages
+import Login from './Pages/Login';
 
 const App = () => {
   return (
-    <>
-      <Navbar />
-      <Request />
-    </>
-  );
-};
+    <Router>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </Router>)
+}
 
 export default App;

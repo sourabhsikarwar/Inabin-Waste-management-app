@@ -3,7 +3,7 @@ import Card from './Card'
 
 const Requests = () => {
   return (
-    <div className='h-auto flex gap-4 flex-col p-4 shadow-md rounded-lg'>
+    <div className='h-auto flex gap-4 flex-col p-4 shadow-md bg-white rounded-lg'>
         <Card/>
         <Card/>
         <Card/>

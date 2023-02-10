@@ -9,7 +9,7 @@ import facebook from "../assets/images/facebook.svg";
 // API  Requests
 import { userLogin } from "../service/api";
 
-const Login = () => {
+const Login = () => {1
 
     const paramField = React.useRef();
     const passwordField = React.useRef();
@@ -27,11 +27,11 @@ const Login = () => {
     }
 
     return (
-        <div className=" bg-gray-200">
+        <div className=" bg-gray-100">
             <p className="text-center font-semibold text-2xl pt-8">KUDAबिन</p>
             <p className="text-center font-semibolfd">Looking for Garbage !</p>
 
-            <div className="max-w-7xl flex justify-center items-center md:flex-row flex-col container px-16 min-h-[86vh] py-16 md:py-0">
+            <div className="max-w-7xl mx-auto flex justify-center items-center md:flex-row flex-col container px-16 min-h-[86vh] py-16 md:py-0">
                 <div className="w-2/5 text-center md:text-left translate-x-0 md:translate-x-5">
                     <p className="text-3xl font-semibold">Login</p>
                     <p className="my-2 text-sm">Let's get started with disposing!</p>

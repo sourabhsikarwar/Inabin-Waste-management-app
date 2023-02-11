@@ -5,19 +5,19 @@ const collectionSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    uniqueRequestId: {
+    uniqueId: {
         type: Number,
+        required: true
+    },
+    reqId: {
+        type: String,
         required: true
     },
     collectorName: {
         type: String,
         required: true
     },
-    userEmail: {
-        type: String,
-        required: true
-    },
-    userContact: {
+    collectorContact: {
         type: Number,
         required: true
     },

@@ -11,7 +11,7 @@ import dustbin from "../assets/images/loginImg.jpg";
 // API  Requests
 import { userLogin } from "../service/api";
 
-const Login = () => {
+const Login = () => {1
 
     const paramField = React.useRef();
     const passwordField = React.useRef();
@@ -35,7 +35,7 @@ const Login = () => {
     }
 
     return (
-        <div className="bg-gray-200 min-h-screen bg-login bg-no-repeat bg-cover bg-center bg-fixed">
+        <div className="bg-gray-100 min-h-screen bg-login bg-no-repeat bg-cover bg-center bg-fixed">
 
             <div className="max-w-7xl flex justify-center md:flex-row flex-col container bg-white min-h-screen">
                 <div className="w-1/2 text-center md:text-left bg-gray-300 pl-32">

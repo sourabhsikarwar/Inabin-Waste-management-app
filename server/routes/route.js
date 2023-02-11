@@ -9,7 +9,7 @@ router.post("/userLogin", userLogin);
 router.post("/userRegister", userRegister);
 router.post("/user/request", createRequest);
 router.get("/user/requests", getRequests);
-router.get("/user/request/:id", getRequest);
+router.post("/user/getRequest", getRequest);
 router.post("/collector/pickups", handleCollection);
 
 export default router;

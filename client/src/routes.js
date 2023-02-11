@@ -4,6 +4,8 @@ import PickupRequest from "./Components/collector/Request";
 import RequestView from "./Components/collector/RequestView";
 import UserLanding from "./Pages/UserLanding";
 
+import UserProfileComp from "./Components/user/Profile.jsx";
+
 export const userRoutes = [
   {
     name: "Home",
@@ -18,7 +20,7 @@ export const userRoutes = [
   {
     name: "Profile",
     path: "profile",
-    component: "<div>Profile</div>",
+    component: UserProfileComp,
   },
   {
     name: "Request Pickup",
@@ -48,11 +50,11 @@ export const collectorRoutes = [
     path: "request-pickup",
     component: PickupRequest,
   },
-  {
-    name: "Request",
-    path: "request/:id",
-    component: RequestView,
-  },
+  // {
+  //   name: "Request",
+  //   path: "request",
+  //   component: RequestView,
+  // },
   // {
   //   name: "Track Application",
   //   path: "track-application",

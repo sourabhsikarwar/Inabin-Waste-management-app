@@ -1,46 +1,57 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 
 const CollectionForm = (props) => {
-    const uniqueId = useRef();
-    const pickerName = useRef();
-    const pickerContact = useRef();
-    const organic = useRef();
-    const plastic = useRef();
-    const metal = useRef();
-    const paper = useRef();
+  const uniqueId = useRef();
+  const pickerName = useRef();
+  const pickerContact = useRef();
+  const organic = useRef();
+  const plastic = useRef();
+  const metal = useRef();
+  const paper = useRef();
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        const reqId = props.data._id;
-        const userName = props.data.name;
-        const pickupAddress = props.data.address;
-        const uniqueIdValue = uniqueId.current.value;
-        const collectorName = pickerName.current.value;
-        const collectorContact = pickerContact.current.value;
-        const organic = organic.current.value;
-        const plastic = plastic.current.value;
-        const metal = metal.current.value;
-        const glass = glass.current.value;
+  useEffect(()=>{
+    let user_name = localStorage.getItem('name');
+    let user_contact = localStorage.getItem('contact');
+    if(pickerName.current)
+      pickerName.current.value = user_name;
+    if(uniqueId.current)
+      uniqueId.current.value = props.data._id;
+    if(pickerContact.current)
+      pickerContact.current.value = user_contact;
+  },[])  
 
-        try{
-            if (
-                uniqueIdValue === "" ||
-                pickerNameValue === "" ||
-                pickerEmailValue === "" ||
-                pickerContactValue === "" ||
-                organicValue === "" ||
-                plasticValue === "" ||
-                metalValue === "" ||
-                glassValue === ""
-            ) {
-                throw new Error("Please fill all the fields");
-            }
-            const res = await collectWaste({reqId, userName, pickupAddress, uniqueIdValue, collectorName, collectorContact, organic, plastic, metal, glass})
-            console.log(res);
-        } catch(error){
-            alert(error.message);
-        }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const reqId = props.data._id;
+    const userName = props.data.name;
+    const pickupAddress = props.data.address;
+    const uniqueIdValue = uniqueId.current.value;
+    const collectorName = pickerName.current.value;
+    const collectorContact = pickerContact.current.value;
+    const organic = organic.current.value;
+    const plastic = plastic.current.value;
+    const metal = metal.current.value;
+    const glass = glass.current.value;
+
+    try {
+      if (
+        uniqueIdValue === "" ||
+        pickerNameValue === "" ||
+        pickerEmailValue === "" ||
+        pickerContactValue === "" ||
+        organicValue === "" ||
+        plasticValue === "" ||
+        metalValue === "" ||
+        glassValue === ""
+      ) {
+        throw new Error("Please fill all the fields");
+      }
+      const res = await collectWaste({ reqId, userName, pickupAddress, uniqueIdValue, collectorName, collectorContact, organic, plastic, metal, glass })
+      console.log(res);
+    } catch (error) {
+      alert(error.message);
     }
+  }
 
 
   return (
@@ -54,12 +65,13 @@ const CollectionForm = (props) => {
             htmlFor="unique-id"
             className="leading-7 text-sm text-gray-600"
           >
-            Unique ID
+            Request ID
           </label>
           <input
-          ref={uniqueId}
+            ref={uniqueId}
             type="text"
             id="unique-id"
+            disabled
             name="unique-id"
             className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
           />
@@ -72,7 +84,8 @@ const CollectionForm = (props) => {
             Name
           </label>
           <input
-          ref={pickerName}
+            ref={pickerName}
+            disabled
             type="text"
             id="picker-name"
             name="picker-name"
@@ -87,8 +100,9 @@ const CollectionForm = (props) => {
             Contact
           </label>
           <input
-          ref={pickerContact}
+            ref={pickerContact}
             type="number"
+            disabled
             id="contact"
             name="contact"
             className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
@@ -106,7 +120,7 @@ const CollectionForm = (props) => {
               Organic
             </label>
             <input
-            ref={organic}
+              ref={organic}
               type="number"
               id="organic"
               name="organic"
@@ -121,7 +135,7 @@ const CollectionForm = (props) => {
               Metal
             </label>
             <input
-            ref={metal}
+              ref={metal}
               type="number"
               id="metal"
               name="metal"
@@ -136,7 +150,7 @@ const CollectionForm = (props) => {
               Plastic
             </label>
             <input
-            ref={plastic}
+              ref={plastic}
               type="number"
               id="plastic"
               name="plastic"
@@ -151,7 +165,7 @@ const CollectionForm = (props) => {
               Paper
             </label>
             <input
-            ref={paper}
+              ref={paper}
               type="email"
               id="paper"
               name="paper"

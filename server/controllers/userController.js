@@ -19,9 +19,11 @@ export const userLogin = async (request, response) => {
       response.json({
         message: "User logged in",
         success: 1,
+        id : user._id,
         name: user.name,
         user_type: user.user_type,
         email: user.email,
+        contact : user.contact
       });
       return;
     }

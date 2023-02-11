@@ -1,10 +1,17 @@
 import CollectorProfileComp from "./Components/collector/Profile";
 import CollectorDashboard from "./Components/collector/Dashboard.jsx";
 import PickupRequest from "./Components/collector/Request";
+import RequestView from "./Components/collector/RequestView";
+import UserLanding from "./Pages/UserLanding";
 
 import UserProfileComp from "./Components/user/Profile.jsx";
 
 export const userRoutes = [
+  {
+    name: "Home",
+    path: "/",
+    component: UserLanding
+  },
   {
     name: "Dashboard",
     path: "dashboard",
@@ -44,8 +51,13 @@ export const collectorRoutes = [
     component: PickupRequest,
   },
   {
-    name: "Track Application",
-    path: "track-application",
-    component: "<div>Track Application</div>",
+    name: "Request",
+    path: "request/:id",
+    component: RequestView,
   },
+  // {
+  //   name: "Track Application",
+  //   path: "track-application",
+  //   component: "<div>Track Application</div>",
+  // },
 ];

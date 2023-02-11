@@ -5,10 +5,10 @@ export const handleCollection = async (req, res) => {
         console.log(req.body);
         const data = new Collection({
             userName: req.body.userName,
-            uniqueRequestId: req.body.uniqueRequestId,
+            reqId: req.body.reqId,
+            uniqueId: req.body.uniqueId,
             collectorName: req.body.collectorName,
-            userEmail: req.body.userEmail,
-            userContact: req.body.userContact,
+            collectorContact: req.body.collectorContact,
             pickupAddress: req.body.pickupAddress,
             plastic: req.body.plastic,
             paper: req.body.paper,

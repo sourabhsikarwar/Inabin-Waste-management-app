@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className="text-gray-600 body-font">
+    <footer className="text-gray-600 body-font bg-gray-50">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-wrap md:text-left text-center order-first">
             <div className="lg:w-1/4 md:w-1/2 w-full px-4">
@@ -92,12 +92,6 @@ const Footer = () => {
               </h2>
               <div className="flex xl:flex-nowrap md:flex-nowrap lg:flex-wrap flex-wrap justify-center items-end md:justify-start">
                 <div className="relative w-40 sm:w-auto xl:mr-4 lg:mr-0 sm:mr-4 mr-2">
-                  <label
-                    for="footer-field"
-                    className="leading-7 text-sm text-gray-600"
-                  >
-                    Placeholder
-                  </label>
                   <input
                     type="text"
                     id="footer-field"
@@ -112,7 +106,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="bg-gray-100">
+        <div className="bg-lightGreen">
           <div className="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col">
             <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
               <svg

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Card = () => {
+const Card = (props) => {
   return (
     <div className='w-full p-4 flex justify-between h-32 rounded-lg shadow-md'>
         <div className='flex flex-col justify-between'>

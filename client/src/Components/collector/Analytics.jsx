@@ -7,7 +7,7 @@ const Analytics = () => {
   return (
     <div>
       <div className="grid grid-cols-3 gap-5">
-        <div className="p-4 px-6 shadow-md bg-gray-100 rounded-md flex justify-between">
+        <div className="p-4 px-6 shadow-md bg-white rounded-md flex justify-between">
           <div className="">
             <p className="text-md font-semibold text-gray-700">Pickups</p>
             <p className="text-xl">70</p>
@@ -18,7 +18,7 @@ const Analytics = () => {
             alt="pickup"
           />
         </div>
-        <div className="p-4 px-6 shadow-md bg-gray-100 rounded-md flex justify-between">
+        <div className="p-4 px-6 shadow-md bg-white rounded-md flex justify-between">
           <div className="">
             <p className="text-md font-semibold text-gray-700">Accuracy</p>
             <p className="text-xl">
@@ -31,7 +31,7 @@ const Analytics = () => {
             alt="pickup"
           />
         </div>
-        <div className="p-4 px-6 shadow-md bg-gray-100 rounded-md flex justify-between">
+        <div className="p-4 px-6 shadow-md bg-white rounded-md flex justify-between">
           <div>
             <p className="text-md font-semibold text-gray-700">Points</p>
             <p className="text-xl">70</p>

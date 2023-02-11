@@ -2,6 +2,8 @@ import CollectorProfileComp from "./Components/collector/Profile";
 import CollectorDashboard from "./Components/collector/Dashboard.jsx";
 import PickupRequest from "./Components/collector/Request";
 
+import UserProfileComp from "./Components/user/Profile.jsx";
+
 export const userRoutes = [
   {
     name: "Dashboard",
@@ -11,7 +13,7 @@ export const userRoutes = [
   {
     name: "Profile",
     path: "profile",
-    component: "<div>Profile</div>",
+    component: UserProfileComp,
   },
   {
     name: "Request Pickup",

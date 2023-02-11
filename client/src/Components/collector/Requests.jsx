@@ -1,26 +1,32 @@
-import React, { useEffect, useState } from 'react'
-import Card from './Card'
-import { getAllPickupRequests } from '../../service/allPickRequest'
+import React, { useEffect, useState } from "react";
+import Card from "./Card";
+import { getAllPickupRequests } from "../../service/allPickRequest";
 
 const Requests = () => {
-  const [pickRequestData, setPickRequestData] = useState([])
+  const [pickRequestData, setPickRequestData] = useState([]);
 
-  // useEffect(() => {
-  //   const data = getAllPickupRequests();
-  //   setPickRequestData(data)
-  // }, [pickRequestData, setPickRequestData])
+  useEffect(() => {
+    const getRequests = async () => {
+      try{
+        const data = await getAllPickupRequests();
+        console.log(data)
+        setPickRequestData(data);
+      } catch(error){
+        console.log(error);
+      }
+    }
+    getRequests()
+  }, [])
 
   return (
-    <div className='h-auto flex gap-4 flex-col p-4 shadow-md bg-white rounded-lg'>
-      {/* {pickRequestData.map((item) => {
-        return <Card />
-      })} */}
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
+    <div className="h-auto flex gap-4 flex-col p-4 shadow-md bg-white rounded-lg">
+      {pickRequestData.map((item) => {
+        return <Card key={item._id} data={item}/>;
+      })}
+      {/* <Card />
+      <Card /> */}
     </div>
-  )
-}
+  );
+};
 
-export default Requests
+export default Requests;

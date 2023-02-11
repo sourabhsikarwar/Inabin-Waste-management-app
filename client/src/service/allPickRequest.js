@@ -1,11 +1,10 @@
-import axios from "axios"
+import axios from "axios";
 
-export const getAllPickupRequests = () => {
-    return axios.get("http://localhost:5000/requests")
-        .then(res => {
-            return res.data
-        })
-        .catch(err => {
-            console.log(err)
-        })
-}
+export const getAllPickupRequests = async () => {
+    try{
+        const response = await axios.get("http://localhost:80/user/requests");
+        return response.data;
+    } catch(error){
+        console.log(error)
+    }
+};

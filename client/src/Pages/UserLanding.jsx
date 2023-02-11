@@ -1,10 +1,10 @@
 import React, { useRef } from "react";
 import Navbar from "../Components/collector/Navbar";
-import banner from "../assets/images/bg2.jpg";
+import banner from "../assets/images/bg.jpeg";
 import Footer from "../Components/Footer";
 import Stats from "../Components/stats";
 import { pickRequest } from "../service/pickRequest";
-import CallUs from "../Components/callUs";
+import CallUs from "../Components/CallUs";
 
 const UserLanding = () => {
   const reqUser = useRef();
@@ -42,16 +42,14 @@ const UserLanding = () => {
     <div className="relative">
       <Navbar />
       <div className="fixed bottom-0 right-0 m-4">
-        <CallUs />
+        <CallUs/>
       </div>
 
       {/* hero section  */}
       <div
-        className="h-full flex"
+        className='h-full flex'
         style={{
-          backgroundColor: `rgba(0, 0, 0, 0.7)`,
-          background: `url(${banner})`,
-          backgroundBlendMode: "overlay",
+          backgroundImage: `url(${banner})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

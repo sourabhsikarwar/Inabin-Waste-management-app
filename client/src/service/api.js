@@ -21,3 +21,13 @@ export const userRegister = async (params) => {
     console.log(error.message);
   }
 };
+
+// GET Pickup Requests API
+export const getRequests = async () => {
+  try {
+    const response = await axios.get(`${url}/user/requests`);
+    return response;
+  } catch (error) {
+    console.log(error.message);
+  }
+};

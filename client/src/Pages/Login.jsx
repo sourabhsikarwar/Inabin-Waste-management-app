@@ -53,17 +53,17 @@ const Login = () => {
                         </div>
                         {showLoginError && <p className="text-red-500 text-sm">Invalid Credentials</p>}
                     </div>
-                    <button className="bg-green px-8 py-2 rounded-lg hover:bg-darkGreen w-3/5" onClick={() => userLoginFunc()}>
+                    <button className="bg-green px-8 py-2 rounded-lg hover:bg-darkGreen w-4/5 md:w-3/5" onClick={() => userLoginFunc()}>
                         <p className="text-md font-semibold">Login</p>
                     </button>
-                    <button className="border-2 border-green px-8 py-2 rounded-lg hover:bg-darkGreen w-3/5 my-3" onClick={() => userLoginFunc()}>
+                    <button className="border-2 border-green px-8 py-2 rounded-lg hover:bg-darkGreen w-4/5 md:w-3/5 my-3" onClick={() => userLoginFunc()}>
                         <p className="text-sm font-semibold flex items-center space-x-4 justify-center">
                             <img src={gmail} className="h-5 w-5" />
                             <p className="text-xs">
                                 Sign up with Google</p>
                         </p>
                     </button>
-                    <button className="border-2 border-green px-8 py-2 rounded-lg hover:bg-darkGreen w-3/5" onClick={() => userLoginFunc()}>
+                    <button className="border-2 border-green px-8 py-2 rounded-lg hover:bg-darkGreen w-4/5 md:w-3/5" onClick={() => userLoginFunc()}>
                         <p className="text-sm font-semibold flex items-center space-x-4 justify-center">
                             <img src={facebook} className="h-5 w-5" />
                             <p className="text-xs">

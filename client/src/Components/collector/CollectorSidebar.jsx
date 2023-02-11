@@ -2,14 +2,14 @@ import React from "react";
 import { collectorRoutes } from "../../routes";
 import logo from "../../assets/images/Logo1.png"
 
-const Logout = ()=>{
+const Logout = () => {
   localStorage.removeItem("user_type");
   localStorage.removeItem("user");
   localStorage.removeItem("email");
   window.location.href = "/login";
 }
 
-const UserSidebar = () => {
+const CollectorSidebar = () => {
   return (
     <div>
 
@@ -21,24 +21,24 @@ const UserSidebar = () => {
       </button>
 
       <aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
-        <div class="h-full px-3 py-4 overflow-y-auto bg-darkGreen">
+        <div className="h-full px-3 py-4 overflow-y-auto bg-blue">
           <img src={logo} className="h-8 px-4 mb-4" />
           <ul class="space-y-2">
             {collectorRoutes.map((route, index) => {
               return (
                 <li>
-                  <a href={route.path} class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-green dark:hover:bg-green">
+                  <a href={route.path} class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-darkBlue dark:hover:bg-darkBlue">
 
                     <span class="ml-3">{route.name}</span>
                   </a>
                 </li>
               )
             })}
-            <li class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-green dark:hover:bg-green cursor-pointer" onClick={Logout}>
+            <li class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-darkBlue dark:hover:bg-dakrBlue cursor-pointer" onClick={Logout}>
               <p className="ml-3">
                 Logout</p>
             </li>
-            <li class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-green dark:hover:bg-green block md:hidden" data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar">
+            <li class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-dakrBlue dark:hover:bg-dakrBlue block md:hidden" data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar">
               <p className="ml-3">
                 Close</p>
             </li>
@@ -52,4 +52,4 @@ const UserSidebar = () => {
   )
 }
 
-export default UserSidebar;
+export default CollectorSidebar;

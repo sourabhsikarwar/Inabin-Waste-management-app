@@ -12,7 +12,8 @@ const UserLanding = () => {
   const userAddress = useRef();
   const contact = useRef();
 
-  const requestFunc = async () => {
+  const requestFunc = async (e) => {
+    e.preventDefault()
     const reqUserValue = reqUser.current.value;
     const emailValue = email.current.value;
     const userAddressValue = userAddress.current.value;

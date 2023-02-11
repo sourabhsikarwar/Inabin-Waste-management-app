@@ -8,7 +8,7 @@ const CollectorLayout = () => {
 
     const [component, setComponent] = React.useState(null);
 
-    const { page } = useParams();
+    const { page, id } = useParams();
 
     React.useEffect(() => {
         let user_type = localStorage.getItem("user_type");
@@ -24,8 +24,8 @@ const CollectorLayout = () => {
     return (
         <div className="w-screen">
             <CollectorSidebar />
-            <div className="px-64 pt-16">
-                <div className="ml-4">
+            <div className="px-64 py-8">
+                <div className="px-4">
                     {component}
                 </div>
             </div>

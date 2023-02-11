@@ -19,11 +19,12 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/collector" element={<Request />} />
-        <Route path="/collector/route" element={<CollectorRoute />} />
-        <Route path="/collector/requests" element={<Request />} />
+        {/* <Route path="/collector/route" element={<CollectorRoute />} /> */}
+        {/* <Route path="/collector/requests" element={<Request />} /> */}
         <Route path="/user" element={<UserLanding />} />
         <Route path="/user/:page" element={<UserLayout />} />
         <Route path="/collector/:page" element={<CollectorLayout />} />
+        <Route path="/collector/:page/:id" element={<CollectorLayout />} />
       </Routes>
     </Router>
     </div>)

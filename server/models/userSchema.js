@@ -35,6 +35,9 @@ const userSchema = mongoose.Schema({
   waste_disposal: {
     type: Array(Date),
   },
+  notification_sent : {
+    type : Date,
+  }
 });
 
 export default mongoose.model("User", userSchema);

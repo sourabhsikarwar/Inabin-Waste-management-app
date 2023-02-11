@@ -19,7 +19,7 @@ export const userLogin = async (request, response) => {
       response.json({
         message: "User logged in",
         success: 1,
-        username: user.username,
+        name: user.name,
         user_type: user.user_type,
         email: user.email,
       });
@@ -44,7 +44,15 @@ export const userRegister = async (request, response) => {
       contact: request.body.contact,
     });
     const newUser = await user.save();
-    response.status(201).json(newUser);
+    response
+      .status(201)
+      .json({
+        message: "User Signed in",
+        success: 1,
+        name: user.name,
+        user_type: user.user_type,
+        email: user.email,
+      });
   } catch (error) {
     response.status(500).json({ message: error.message });
   }

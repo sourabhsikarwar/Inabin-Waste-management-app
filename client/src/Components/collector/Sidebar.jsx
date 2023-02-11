@@ -8,10 +8,15 @@ const Sidebar = () => {
           Task
         </div>
         <div className="bg-transparent hover:bg-lightGreen w-full px-4 py-2 rounded-lg cursor-pointer">
-          Profile
+          <a href="/collector/profile">Profile</a>
         </div>
         <div className="bg-transparent hover:bg-lightGreen w-full px-4 py-2 rounded-lg cursor-pointer">
           Analytics
+        </div>
+        <div className="bg-transparent hover:bg-lightGreen w-full px-4 py-2 rounded-lg cursor-pointer">
+          <a href="/collector/route">
+            Route
+          </a>
         </div>
       </div>
       <div className="w-full cursor-pointer rounded-lg">

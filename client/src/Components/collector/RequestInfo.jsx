@@ -18,9 +18,11 @@ const RequestInfo = (props) => {
   //   }
   //   getInfo();
   // })
+  let tDate
+  let date
   if ( props.data && props.data.createdAt) {
-    const date = new Date(props.data.createdAt);
-    const tDate = date.toLocaleDateString();
+    date = new Date(props.data.createdAt);
+    tDate = date.toLocaleDateString();
   }
 
   return (

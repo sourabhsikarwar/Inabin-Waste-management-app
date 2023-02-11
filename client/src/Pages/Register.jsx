@@ -43,7 +43,7 @@ const Login = () => {
   }
 
   return (
-    <div className="bg-gray-200 min-h-screen bg-login bg-no-repeat bg-cover bg-center bg-fixed">
+    <div className="bg-white min-h-screen bg-login bg-no-repeat bg-cover bg-center bg-fixed">
 
       <div className="max-w-7xl flex justify-center md:flex-row flex-col container bg-white min-h-screen">
         <div className="w-2/5 h-screen hidden md:block">

@@ -1,12 +1,12 @@
 import React from 'react'
 
-const Card = () => {
+const Card = (props) => {
   return (
     <div className='w-full p-4 flex justify-between h-32 rounded-lg shadow-md'>
         <div className='flex flex-col justify-between'>
-            <div>Name of the pickup</div>
-            <div className='text-gray-400'>Name of the pickup</div>
-            <div >address: Lorem ipsum dolor sit.</div>
+            <div>{props.data.requestUser}</div>
+            <div className='text-gray-400'>{props.data.address}</div>
+            <div>{props.data.status}</div>
         </div>
         <div className='flex flex-col items-center justify-between'>
             <div className='text-gray-400'>10.15.13</div>

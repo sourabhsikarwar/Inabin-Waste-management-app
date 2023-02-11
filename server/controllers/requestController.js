@@ -6,6 +6,7 @@ export const getRequests = async (req, res) => {
         const requests = await Request.find();
         res.status(200).json(requests);
     } catch (error) {
+        console.log(error)
         res.status(404).json({ message: error.message });
     }
 }
@@ -37,5 +38,16 @@ export const createRequest = async (req, res) => {
         res.status(201).json(newRequest);
     } catch (error) {
         res.status(500).json({ message: error.message });
+    }
+}
+
+// update request after collecting the waste 
+export const updateRequest = async (req, res) => {
+    try {
+        const { requestUser, requestEmail, contact, address, uniqueRequestID, dateOfCompletion, status } = req.body;
+        const updatedRequest = await Request.findByIdAndUpdate(req.params.id, { requestUser, requestEmail, contact, address, uniqueRequestID, dateOfCompletion, status }, { new: true });
+        res.status(200).json(updatedRequest);
+    } catch (error) {
+        res.status(404).json({ message: error.message });
     }
 }

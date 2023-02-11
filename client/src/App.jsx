@@ -1,8 +1,8 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Request from './Pages/collector/Request';
 
 // Pages
+import Request from './Pages/collector/Request';
 import Login from './Pages/Login';
 import Register from "./Pages/Register";
 import CollectorRoute from './Pages/collector/Route';

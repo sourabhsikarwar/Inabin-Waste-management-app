@@ -39,3 +39,14 @@ export const createRequest = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 }
+
+// update request after collecting the waste 
+export const updateRequest = async (req, res) => {
+    try {
+        const { requestUser, requestEmail, contact, address, uniqueRequestID, dateOfCompletion, status } = req.body;
+        const updatedRequest = await Request.findByIdAndUpdate(req.params.id, { requestUser, requestEmail, contact, address, uniqueRequestID, dateOfCompletion, status }, { new: true });
+        res.status(200).json(updatedRequest);
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+    }
+}

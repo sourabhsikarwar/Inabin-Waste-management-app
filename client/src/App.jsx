@@ -1,8 +1,8 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Request from './Pages/collector/Request';
 
 // Pages
+import Request from './Pages/collector/Request';
 import Login from './Pages/Login';
 import Register from "./Pages/Register";
 import CollectorProfile from './Pages/collector/CollectorProfile';
@@ -17,6 +17,7 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/login" element={<Login />} />
+
         <Route path="/register" element={<Register />} />
         <Route path="/collector" element={<Request />} />
         <Route path="/collector/profile" element={<CollectorProfile />} />

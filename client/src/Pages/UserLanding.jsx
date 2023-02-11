@@ -5,6 +5,7 @@ import Footer from "../Components/Footer";
 import Stats from "../Components/stats";
 import { pickRequest } from "../service/pickRequest";
 import CallUs from "../Components/CallUs";
+import swal from "sweetalert";
 
 const UserLanding = () => {
   const reqUser = useRef();
@@ -34,6 +35,7 @@ const UserLanding = () => {
         userAddressValue,
         contactValue,
       });
+      swal("Request Sent!", "We will contact you soon!", "success");
     } catch (error) {
       alert(error.message);
     }
@@ -67,9 +69,9 @@ const UserLanding = () => {
           </div>
           <div className="mx-auto w-full px-4">
             <div className="md:w-2/5 bg-white flex flex-col md:mx-auto w-full p-8 my-4 rounded-lg shadow-lg">
-              <h2 className="text-darkGreen text-xl mb-4 font-semibold title-font">
+              <div className="text-darkGreen text-2xl text-center mb-6 font-semibold title-font">
                 Request Pickup Service
-              </h2>
+              </div>
               <div className="relative mb-4">
                 <label for="name" className="leading-7 text-sm text-gray-600">
                   Name

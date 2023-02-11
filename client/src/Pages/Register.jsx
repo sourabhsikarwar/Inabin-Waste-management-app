@@ -48,7 +48,7 @@ const Login = () => {
       <div className="max-w-7xl flex justify-center md:flex-row flex-col container bg-white min-h-screen">
         <div className="w-2/5 h-screen hidden md:block">
           <div className="min-h-screen flex relative justify-center items-center py-4">
-            <div className="absolute w-full h-full bg-black opacity-70 z-[10]  "></div>
+            <div className="absolute w-full h-full bg-black opacity-70 z-[10]"></div>
             <img src={dustbin} className="w-full absolute h-full" />
             <div className="z-[30] text-white font-semibold  px-10 text-center">
               <p className="capitalize text-2xl pb-10">"Where your trash becomes our mission"</p>

@@ -2,7 +2,6 @@ import React from "react";
 import Navbar from "../../Components/collector/Navbar";
 import Requests from "../../Components/collector/Requests";
 import Sidebar from "../../Components/collector/Sidebar";
-import Navbar from "../../Components/collector/Navbar.jsx";
 
 const Request = () => {
   return (

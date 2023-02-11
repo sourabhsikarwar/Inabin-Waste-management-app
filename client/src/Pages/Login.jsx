@@ -24,6 +24,8 @@ const Login = () => {
       localStorage.setItem("name", res.data.name);
       localStorage.setItem("user_type", res.data.user_type);
       localStorage.setItem("email", res.data.email);
+      localStorage.setItem("userId", res.data.id);
+      localStorage.setItem("contact", res.data.contact);
       if (res.data.user_type == "user")
         window.location.href = "/user/dashboard";
       else if (res.data.user_type == "collector")

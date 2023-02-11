@@ -50,11 +50,11 @@ export const collectorRoutes = [
     path: "request-pickup",
     component: PickupRequest,
   },
-  {
-    name: "Request",
-    path: "request/:id",
-    component: RequestView,
-  },
+  // {
+  //   name: "Request",
+  //   path: "request",
+  //   component: RequestView,
+  // },
   // {
   //   name: "Track Application",
   //   path: "track-application",

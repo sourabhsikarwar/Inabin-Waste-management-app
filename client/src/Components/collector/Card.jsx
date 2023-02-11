@@ -6,7 +6,7 @@ const Card = (props) => {
         <div className='flex flex-col justify-between'>
             <div>{props.data.requestUser}</div>
             <div className='text-gray-400'>{props.data.address}</div>
-            <div>{props.data.status}</div>
+            <div className='capitalize'>{props.data.status}</div>
         </div>
         <div className='flex flex-col items-center justify-between'>
             <div className='text-gray-400'>10.15.13</div>

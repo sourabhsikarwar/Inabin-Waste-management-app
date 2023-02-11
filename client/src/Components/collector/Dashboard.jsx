@@ -9,12 +9,11 @@ import CollectionForm from "./CollectionForm";
 
 const CollectorDashboard = () => {
   return (
-    <div>
+    <div className="w-full">
       <p className="text-xl font-semibold pb-4">Dashboard</p>
-      <RequestInfo/>
-      <div className="my-2">
-        <CollectionForm />
-      </div>
+      <Analytics />
+      <p className="text-lg pt-6 font-semibold py-4">PickUp Requests</p>
+      <Requests />
     </div>
   );
 };

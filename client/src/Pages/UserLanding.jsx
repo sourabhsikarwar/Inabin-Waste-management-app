@@ -121,7 +121,7 @@ const UserLanding = () => {
                 Request Pickup Service
               </div>
               <div className="relative mb-4">
-                <label for="name" className="leading-7 text-sm text-gray-600">
+                <label htmlFor="name" className="leading-7 text-sm text-gray-600">
                   Name
                 </label>
                 <input
@@ -133,7 +133,7 @@ const UserLanding = () => {
                 />
               </div>
               <div className="relative mb-4">
-                <label for="email" className="leading-7 text-sm text-gray-600">
+                <label htmlFor="email" className="leading-7 text-sm text-gray-600">
                   Email
                 </label>
                 <input
@@ -145,7 +145,7 @@ const UserLanding = () => {
                 />
               </div>
               <div className="relative mb-4">
-                <label for="number" className="leading-7 text-sm text-gray-600">
+                <label htmlFor="number" className="leading-7 text-sm text-gray-600">
                   Contact No.
                 </label>
                 <input
@@ -157,7 +157,7 @@ const UserLanding = () => {
                 />
               </div>
               <div className="relative mb-4">
-                <label for="text" className="leading-7 text-sm text-gray-600">
+                <label htmlFor="text" className="leading-7 text-sm text-gray-600">
                   Address
                 </label>
                 <input

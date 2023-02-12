@@ -7,12 +7,10 @@ const Stats = () => {
 
         <div className="text-center mb-20">
           <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4">
-            Raw Denim Heirloom Man Braid
+            Waste ke saath bhi, Recycle ke baad bhi
           </h1>
           <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500">
-            Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-            taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi
-            pug.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt tempora, hic adipisci blanditiis consequuntur consequatur nisi animi libero?
           </p>
           <div className="flex mt-6 justify-center">
             <div className="w-16 h-1 rounded-full bg-darkGreen inline-flex"></div>
@@ -36,12 +34,10 @@ const Stats = () => {
             </div>
             <div className="flex-grow">
               <h2 className="text-gray-900 text-lg title-font font-medium mb-3">
-                Shooting Stars
+                Convient Pickups
               </h2>
               <p className="leading-relaxed text-base">
-                Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-                taxidermy. Gastropub indxgo juice poutine, ramps microdosing
-                banh mi pug VHS try-hard.
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum iure molestiae quos enim asperiores excepturi tempore.
               </p>
             </div>
           </div>
@@ -63,7 +59,7 @@ const Stats = () => {
             </div>
             <div className="flex-grow">
               <h2 className="text-gray-900 text-lg title-font font-medium mb-3">
-                The Catalyzer
+                Recycle goods
               </h2>
               <p className="leading-relaxed text-base">
                 Blue bottle crucifix vinyl post-ironic four dollar toast vegan
@@ -89,7 +85,7 @@ const Stats = () => {
             </div>
             <div className="flex-grow">
               <h2 className="text-gray-900 text-lg title-font font-medium mb-3">
-                Neptune
+                Providing Employment
               </h2>
               <p className="leading-relaxed text-base">
                 Blue bottle crucifix vinyl post-ironic four dollar toast vegan

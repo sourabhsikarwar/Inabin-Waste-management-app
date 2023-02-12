@@ -11,6 +11,7 @@ import {
   getCollectionByReqId,
   handleCollection,
 } from "../controllers/collectionController.js";
+import { updateWasteDisposal } from "../controllers/reminderController.js";
 
 const router = express.Router();
 
@@ -26,5 +27,6 @@ router.put("/user/updateRequest/:id", updateRequest);
 router.post("/collector/pickups", handleCollection);
 router.get("/collector/history/:id", getCollection);
 router.get("/collector/historyByReq/:id", getCollectionByReqId);
+router.get("/collectionById/:id", getCollectionByReqId);
 
 export default router;

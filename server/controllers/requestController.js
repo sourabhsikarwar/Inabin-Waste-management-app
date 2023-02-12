@@ -1,5 +1,6 @@
 import Request from "../models/requestSchema.js";
 import dotenv from "dotenv";
+import User from "../models/userSchema.js";
 import twilio from "twilio";
 
 const client = twilio(
@@ -38,17 +39,24 @@ export const getRequest = async (req, res) => {
 // post request for pickup task
 export const createRequest = async (req, res) => {
   try {
+    
     const data = new Request({
       requestUser: req.body.reqUserValue,
       requestEmail: req.body.emailValue,
       contact: req.body.contactValue,
       address: req.body.userAddressValue,
       dateOfCompletion: null,
+      location : req.body.location,
       status: "started",
       requestUserID: req.body.reqUserId,
     });
 
     const newRequest = await data.save();
+
+    const user = User.findById(req.body.reqUserId);
+    var l = user.waste_disposal || [];
+    l.push(new Date());
+    user.waste_disposal = l;
     await client.messages
       .create({
         body: `Hi ${req.body.reqUserValue}, your request for waste pickup has been received. We will contact you soon. Your unique request ID is ${newRequest._id}`,
@@ -63,6 +71,7 @@ export const createRequest = async (req, res) => {
   }
 };
 
+  
 // update request after collecting the waste
 // export const updateRequest = async (req, res) => {
 //   try {

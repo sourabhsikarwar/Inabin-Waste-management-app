@@ -2,6 +2,7 @@ import { useRef, useEffect, useState } from "react";
 import swal from "sweetalert";
 import { acceptRequest } from "../../service/acceptRequest";
 import { collectWaste } from "../../service/allPickRequest";
+import { getCollectionByReqId } from "../../service/api";
 
 const CollectionForm = (props) => {
   const [requestAccept, setRequestAccept] = useState(false);
@@ -15,24 +16,32 @@ const CollectionForm = (props) => {
   const metal = useRef();
   const paper = useRef();
 
+  const [data, setData] = useState({});
+
   useEffect(() => {
-    const id = localStorage.getItem("userId");
-    console.log(props);
-    if (props.data.collectorId && id !== props.data.collectorID) {
-      swal("Error!", "You are not authorized to collect this waste!", "error");
-      props.history.push("/collector");
+    const a = async () => {
+      const id = localStorage.getItem("userId");
+
+      if (props.data.collectorId && id !== props.data.collectorID) {
+        swal("Error!", "You are not authorized to collect this waste!", "error");
+        props.history.push("/collector");
+      }
+      if (props.data.collectorID)
+        setRequestAccept(true);
+      if (props.data.status === "completed") {
+        setCompleted(true);
+        setRequestAccept(true);
+        let d = await getCollectionByReqId(props.data._id);
+        console.log(d.data);
+        setData(d.data[0]);
+      }
+      let user_name = localStorage.getItem("name");
+      let user_contact = localStorage.getItem("contact");
+      if (pickerName.current) pickerName.current.value = user_name;
+      if (collectorId.current) collectorId.current.value = localStorage.getItem("userId");
+      if (pickerContact.current) pickerContact.current.value = user_contact;
     }
-    if (props.data.collectorID)
-      setRequestAccept(true);
-    if (props.data.status === "completed") {
-      setCompleted(true);
-      setRequestAccept(true);
-    }
-    let user_name = localStorage.getItem("name");
-    let user_contact = localStorage.getItem("contact");
-    if (pickerName.current) pickerName.current.value = user_name;
-    if (collectorId.current) collectorId.current.value = localStorage.getItem("userId");
-    if (pickerContact.current) pickerContact.current.value = user_contact;
+    a();
   }, []);
 
   const handleSubmit = async (e) => {
@@ -72,9 +81,9 @@ const CollectionForm = (props) => {
         metal1,
         glass1,
       });
-      if (res && res.status === 201) {
-        setCompleted(true);
+      if (res) {
         swal("Success!", "Waste Collected! You got 10 points !", "success");
+        window.location.reload();
       }
     } catch (error) {
       alert(error.message);
@@ -169,7 +178,7 @@ const CollectionForm = (props) => {
         {requestAccept && (
           <div>
             <h1 className="text-xl text-darkGreen my-4">
-              Waste Composition (in % from 100)
+              Waste Composition (in KGs)
             </h1>
             <div className="grid grid-cols-2 gap-4">
               <div className="relative mb-4 flex flex-col">
@@ -181,10 +190,10 @@ const CollectionForm = (props) => {
                 </label>
                 <input
                   ref={organic}
-                  max={100}
                   disabled={completed}
                   type="number"
                   id="organic"
+                  value = {data && data.organic}
                   name="organic"
                   className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 />
@@ -199,8 +208,8 @@ const CollectionForm = (props) => {
                 <input
                   ref={metal}
                   type="number"
+                  value = {data && data.metal}
                   disabled={completed}
-                  max={100}
                   id="metal"
                   name="metal"
                   className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
@@ -214,10 +223,10 @@ const CollectionForm = (props) => {
                   Plastic
                 </label>
                 <input
-                  max={100}
                   ref={plastic}
                   disabled={completed}
                   type="number"
+                  value = {data && data.plastic}
                   id="plastic"
                   name="plastic"
                   className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
@@ -231,9 +240,9 @@ const CollectionForm = (props) => {
                   Paper
                 </label>
                 <input
-                  max={100}
                   ref={paper}
                   disabled={completed}
+                  value = {data && data.paper}
                   type="email"
                   id="paper"
                   name="paper"

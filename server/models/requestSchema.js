@@ -41,6 +41,10 @@ const requestSchema = mongoose.Schema(
     collectorContact: {
       type: Number,
     },
+    // lognitude and latitude
+    location : {
+      type : Object,
+    }
   },
   {
     timestamps: true,

@@ -37,7 +37,13 @@ const userSchema = mongoose.Schema({
   },
   notification_sent : {
     type : Date,
-  }
+  },
+  average_day : {
+    type : Number,
+  },
+  days_left_notification : {
+    type : Number,
+  },
 });
 
 export default mongoose.model("User", userSchema);

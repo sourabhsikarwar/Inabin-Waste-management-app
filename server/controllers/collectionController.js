@@ -69,6 +69,7 @@ export const getCollection = async (req, res) => {
 
 export const getCollectionByReqId = async (req, res) => {
   try {
+    console.log(req.params.id);
     const data = await Collection.find({ requestId: req.params.id });
     res.status(201).json(data);
   } catch (error) {

@@ -11,28 +11,13 @@ import CollectionHistory from "./Components/collector/CollectorHistory";
 export const userRoutes = [
   {
     name: "Home",
-    path: "/",
+    path: "/user/",
     component: UserLanding,
-  },
-  {
-    name: "Dashboard",
-    path: "dashboard",
-    component: "<div>Dashboard</div>",
   },
   {
     name: "Profile",
     path: "profile",
     component: UserProfileComp,
-  },
-  {
-    name: "Request Pickup",
-    path: "request-pickup",
-    component: "<div>Request Pickup</div>",
-  },
-  {
-    name: "Track Application",
-    path: "track-application",
-    component: "<div>Track Application</div>",
   },
 ];
 

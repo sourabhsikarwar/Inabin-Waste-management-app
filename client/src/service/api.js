@@ -48,4 +48,13 @@ export const getAnalytics = async (id) => {
   } catch (error) {
     console.log(error.message);
   }
-}
+};
+
+export const getCollectionByReqId = async (id) => {
+  try {
+    const response = await axios.get(`${url}/collectionById/${id}`);
+    return response;
+  } catch (error) {
+    console.log(error.message);
+  }
+};

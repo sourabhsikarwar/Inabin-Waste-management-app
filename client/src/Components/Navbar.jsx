@@ -21,16 +21,17 @@ const Navbar = () => {
           <img src={logo} className="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
         </Link>
         <div className="flex md:order-2 items-center gap-4">
-        <div className="   items-center gap-1 hidden md:flex">
+          <div className="   items-center gap-1 hidden md:flex">
             <img src={coin} alt="" className="w-5 bg-green rounded-full h-5" />
             <div>{coins}</div>
           </div>
           <Link
-            to='/store'
+            to="/store"
             className="text-white bg-green hover:bg-darkGreen focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0"
           >
             Visit Store
           </Link>
+          <Link to='/login' className="hidden md:block hover:text-green">Logout</Link>
           <button
             data-collapse-toggle="navbar-sticky"
             type="button"
@@ -84,13 +85,20 @@ const Navbar = () => {
               </a>
             </li>
             <li>
-            <div className="items-center gap-2 flex md:hidden px-2">
-            <img src={coin} className="h-5 bg-green w-5 rounded-full" alt="" />
-            <div>{coins}</div>
-          </div>
+              <Link to='/login' className="py-2 pl-3 md:hidden block pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 hover:text-green">Logout</Link>
             </li>
+            <li>
+              <div className="items-center gap-2 flex md:hidden px-2 my-3">
+                <img
+                  src={coin}
+                  className="h-5 bg-green w-5 rounded-full"
+                  alt=""
+                />
+                <div>{coins}</div>
+              </div>
+            </li>
+            
           </ul>
-          
         </div>
       </div>
     </nav>

@@ -31,10 +31,10 @@ export const handleCollection = async (req, res) => {
 
     var collectUser = await User.findById(req.body.collectorId);
     collectUser.points = collectUser.points + 10;
-
+    console.log("F")
     await reqUser.save();
     await collectUser.save();
-
+    console.log("F")
     const updatedRequest = await Request.findByIdAndUpdate(
       req.body.reqId,
       {
@@ -44,6 +44,7 @@ export const handleCollection = async (req, res) => {
       { new: true }
     );
     updatedRequest.save();
+    console.log("F")
     await client.messages.create({
       body: `Hi ${req.body.userName}, your request for waste pickup has been completed by ${req.body.collectorName}. Your unique request ID is ${req.body.reqId}`,
       from: "+13854620884",

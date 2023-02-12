@@ -8,16 +8,50 @@ import CallUs from "../Components/CallUs";
 import swal from "sweetalert";
 
 const UserLanding = () => {
+  const [loc, setLoc] = React.useState(null);
   const reqUser = useRef();
   const email = useRef();
   const userAddress = useRef();
   const contact = useRef();
 
-  React.useEffect(()=>{
+  React.useEffect(() => {
     reqUser.current.value = localStorage.getItem("name");
     email.current.value = localStorage.getItem("email");
     contact.current.value = localStorage.getItem("contact");
-  },[])
+  }, [])
+
+  React.useEffect(() => {
+    // if (! "geolocation" in navigator) {
+    //   swal("Geolocation is not supported by your browser");
+    // }
+    // else {
+    // navigator.geolocation.getCurrentPosition((position) => {
+    //   setLoc({ lati: position.coords.latitude, longi: position.coords.longitude });
+    // })
+    // }
+    if (navigator.geolocation) {
+      navigator.permissions
+        .query({ name: "geolocation" })
+        .then(function (result) {
+          if (result.state === "granted") {
+            console.log(result.state);
+            navigator.geolocation.getCurrentPosition((position) => {
+              setLoc({ lati: position.coords.latitude, longi: position.coords.longitude });
+            })
+          } else if (result.state === "prompt") {
+            console.log(result.state);
+          } else if (result.state === "denied") {
+            swal("Allow location access to continue");
+          }
+          result.onchange = function () {
+            console.log(result.state);
+          };
+        });
+    } else {
+      alert("Sorry Not available!");
+    }
+  }, []);
+
 
   const requestFunc = async (e) => {
     e.preventDefault()
@@ -41,6 +75,7 @@ const UserLanding = () => {
         userAddressValue,
         contactValue,
         reqUserId,
+        location: loc
       });
       if (result && result.status == 201 && result.data._id) {
         swal("Request Sent!", "We will contact you soon!", "success");

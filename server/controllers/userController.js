@@ -86,7 +86,7 @@ export const analytics = async (request, response) => {
 
 export const deleteAll = async(req,res) => {
   try {
-    // await Request.deleteMany({});
+    await Request.deleteMany({});
     await Collection.deleteMany({});
     res.json({message : "All users deleted"});
   } catch (error) {

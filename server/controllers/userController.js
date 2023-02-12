@@ -35,7 +35,6 @@ export const userLogin = async (request, response) => {
 
 // User Register
 export const userRegister = async (request, response) => {
-  const u_id = Math.floor(Math.random() * 1000000);
   try {
     console.log(request.body);
     const user = new User({
@@ -45,7 +44,6 @@ export const userRegister = async (request, response) => {
       user_type: request.body.user_type,
       address: request.body.address,
       contact: request.body.contact,
-      uniqueId: u_id,
     });
     const newUser = await user.save();
     response
@@ -56,7 +54,6 @@ export const userRegister = async (request, response) => {
         name: user.name,
         user_type: user.user_type,
         email: user.email,
-        unique_id: user.uniqueId,
       });
   } catch (error) {
     response.status(500).json({ message: error.message });

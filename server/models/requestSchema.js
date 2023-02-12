@@ -18,15 +18,29 @@ const requestSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    collectorID: {
+        type: Number,
+        required: true,
+    },
+    requestUserID: {
+        type: Number,
+        required: true,
+    },
     dateOfCompletion: {
         type: Date,
         default: null,
     },
     status: {
         type: String,
-        enum: ['started', 'pending', 'completed'],
+        enum: ['started', 'in-progress', 'completed'],
         required: true,
-    }, 
+    },
+    collectorName: {
+      type: String,
+    },
+    collectorContact: {
+      type: Number,
+    },
   },
   {
     timestamps: true,

@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { collectorRoutes } from "../routes";
-import Sidebar from "../Components/Collector/Sidebar";
+import Sidebar from "../Components/collector/Sidebar";
 import Navbar from "../Components/collector/Navbar";
 
 const CollectorLayout = () => {

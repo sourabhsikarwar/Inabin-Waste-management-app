@@ -7,6 +7,7 @@ export const getRequestData = async (params) => {
     try{
         console.log(params);
         const data = await axios.post(`${url}/user/getRequest`,params);
+        console.log(data);
         return data;
     } catch(error){
         console.log(error);

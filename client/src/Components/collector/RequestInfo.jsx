@@ -18,10 +18,12 @@ const RequestInfo = (props) => {
   //   }
   //   getInfo();
   // })
+  var tDate = "";
   if ( props.data && props.data.createdAt) {
     const date = new Date(props.data.createdAt);
-    const tDate = date.toLocaleDateString();
+    tDate = date.toLocaleDateString();
   }
+  console.log(props);
 
   return (
     <div className="bg-white shadow-lg h-auto w-full rounded-lg flex justify-between p-8">

@@ -18,10 +18,6 @@ const requestSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    uniqueRequestID: {
-        type: Number,
-        required: true,
-    },
     dateOfCompletion: {
         type: Date,
         default: null,

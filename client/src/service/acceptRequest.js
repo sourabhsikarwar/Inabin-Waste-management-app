@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const url = "http://localhost:80";
+const url = "https://ecell-nitb-hack2k23-team-asper-otfo-git-main-sandeshj-07.vercel.app";
 
 export const acceptRequest = async ({ _id, collectorName, collectorContact, status, collectorID }) => {
     try {

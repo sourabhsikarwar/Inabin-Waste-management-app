@@ -11,7 +11,6 @@ import {
   getCollectionByReqId,
   handleCollection,
 } from "../controllers/collectionController.js";
-import { updateWasteDisposal } from "../controllers/reminderController.js";
 
 const router = express.Router();
 

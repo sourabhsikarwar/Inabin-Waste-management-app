@@ -18,7 +18,11 @@ const requestSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    uniqueRequestID: {
+    collectorID: {
+        type: Number,
+        required: true,
+    },
+    requestUserID: {
         type: Number,
         required: true,
     },

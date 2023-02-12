@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import Navbar from "../Components/collector/Navbar";
+import Navbar from "../Components/Navbar";
 import banner from "../assets/images/bg.jpeg";
 import Footer from "../Components/Footer";
 import Stats from "../Components/stats";

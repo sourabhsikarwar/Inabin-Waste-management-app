@@ -26,7 +26,6 @@ const CollectionForm = (props) => {
     const reqId = props.data._id;
     const userName = props.data.name;
     const pickupAddress = props.data.address;
-    const uniqueIdValue = uniqueId.current.value;
     const collectorName = pickerName.current.value;
     const collectorContact = pickerContact.current.value;
     const organic = organic.current.value;
@@ -91,7 +90,7 @@ const CollectionForm = (props) => {
               htmlFor="unique-id"
               className="leading-7 text-sm text-gray-600"
             >
-              Request ID
+              Collector Id
             </label>
             <input
               ref={uniqueId}

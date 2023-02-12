@@ -5,11 +5,11 @@ const collectionSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    uniqueId: {
-        type: Number,
+    collectorId: {
+        type: String,
         required: true
     },
-    reqId: {
+    requestUserId: {
         type: String,
         required: true
     },

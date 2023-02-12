@@ -6,7 +6,8 @@ export const handleCollection = async (req, res) => {
         const data = new Collection({
             userName: req.body.userName,
             reqId: req.body.reqId,
-            uniqueId: req.body.uniqueId,
+            collectorId: req.body.uniqueId,
+            requestUserId: req.body.uniqueId,
             collectorName: req.body.collectorName,
             collectorContact: req.body.collectorContact,
             pickupAddress: req.body.pickupAddress,

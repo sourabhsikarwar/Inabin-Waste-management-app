@@ -13,13 +13,19 @@ const UserLanding = () => {
   const userAddress = useRef();
   const contact = useRef();
 
+  React.useEffect(()=>{
+    reqUser.current.value = localStorage.getItem("name");
+    email.current.value = localStorage.getItem("email");
+    contact.current.value = localStorage.getItem("contact");
+  },[])
+
   const requestFunc = async (e) => {
     e.preventDefault()
     const reqUserValue = reqUser.current.value;
     const emailValue = email.current.value;
     const userAddressValue = userAddress.current.value;
     const contactValue = contact.current.value;
-
+    const reqUserId = localStorage.getItem("userId");
     try {
       if (
         reqUserValue === "" ||
@@ -34,8 +40,16 @@ const UserLanding = () => {
         emailValue,
         userAddressValue,
         contactValue,
+        reqUserId,
       });
-      swal("Request Sent!", "We will contact you soon!", "success");
+      if (result && result.status == 201 && result.data._id) {
+        swal("Request Sent!", "We will contact you soon!", "success");
+        reqUser.current.value = "";
+        email.current.value = "";
+        userAddress.current.value = "";
+        contact.current.value = "";
+      }
+      else { swal("Request Failed!", "Please try again!", "error"); }
     } catch (error) {
       alert(error.message);
     }
@@ -45,7 +59,7 @@ const UserLanding = () => {
     <div className="relative">
       <Navbar />
       <div className="fixed bottom-0 right-0 m-4">
-        <CallUs/>
+        <CallUs />
       </div>
 
       {/* hero section  */}
@@ -60,11 +74,10 @@ const UserLanding = () => {
         <div className="container max-w-7xl m-auto flex flex-col py-16 gap-8">
           <div className="flex flex-col justify-center items-center text-center gap-4">
             <h1 className="text-3xl md:text-4xl font-bold text-green">
-              Lorem ipsum dolor sit.
+              "A Better Tomorrow, Request Pickup."
             </h1>
             <p className="text-white text-sm md:text-md md:w-1/2 w-3/4">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis
-              est pariatur voluptatum. At commodi inventore repudiandae.
+              Be the change you wish to see, request waste management today and let's create a cleaner tomorrow!
             </p>
           </div>
           <div className="mx-auto w-full px-4">

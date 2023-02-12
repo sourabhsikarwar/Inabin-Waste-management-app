@@ -2,20 +2,28 @@ import React from "react";
 import pickup from "../../assets/images/pickup.svg";
 import accuracy from "../../assets/images/accuracy.svg";
 import points from "../../assets/images/rating-white.svg";
+import { getAnalytics } from "../../service/api";
 
 const Analytics = () => {
+
+  const [analytics, setAnalytics] = React.useState(null);
+
+  React.useEffect(() => {
+    const getAnalytics1 = async () => {
+      let id = localStorage.getItem('userId');
+      let res = await getAnalytics(id);
+      setAnalytics(res.data);
+    }
+    getAnalytics1();
+  }, [])
+
   return (
     <div>
-<<<<<<< HEAD
-      <div className="grid grid-cols-4 gap-5">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
         <div className="p-4 px-6 shadow-md bg-gray-100 rounded-md flex justify-between">
-=======
-      <div className="grid grid-cols-3 gap-5">
-        <div className="p-4 px-6 shadow-md bg-white rounded-md flex justify-between">
->>>>>>> 5186054a3f5d0a14080268704681c28cdc114827
           <div className="">
             <p className="text-md font-semibold text-gray-700">Pickups</p>
-            <p className="text-xl">70</p>
+            <p className="text-xl">{analytics ? analytics.c : "--"}</p>
           </div>
           <img
             src={pickup}
@@ -39,7 +47,7 @@ const Analytics = () => {
         <div className="p-4 px-6 shadow-md bg-white rounded-md flex justify-between">
           <div>
             <p className="text-md font-semibold text-gray-700">Points</p>
-            <p className="text-xl">70</p>
+            <p className="text-xl">{analytics ? analytics.p : "--"}</p>
           </div>
           <img
             src={points}
@@ -50,7 +58,7 @@ const Analytics = () => {
         <div className="p-4 px-6 shadow-md bg-gray-100 rounded-md flex justify-between">
           <div>
             <p className="text-md font-semibold text-gray-700">Pickups Left</p>
-            <p className="text-xl">70</p>
+            <p className="text-xl">{analytics ? analytics.r : "--"}</p>
           </div>
           <img
             src={points}

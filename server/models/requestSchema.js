@@ -19,11 +19,11 @@ const requestSchema = mongoose.Schema(
       required: true,
     },
     collectorID: {
-        type: Number,
-        required: true,
+        type: String,
+        required: false,
     },
     requestUserID: {
-        type: Number,
+        type: String,
         required: true,
     },
     dateOfCompletion: {

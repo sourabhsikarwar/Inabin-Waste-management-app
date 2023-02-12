@@ -10,11 +10,12 @@ import { getRequestData } from "../../service/getRequestInfo";
 
 const RequestView = () => {
   const { id } = useParams();
-  const [data, setData] = React.useState({});
+  const [data, setData] = React.useState(null);
   React.useEffect(() => {
     const getInfo = async () => {
       try {
         const res = await getRequestData({ id: id });
+        console.log(res.data);
         setData(res.data);
       } catch (err) {
         console.log(err);
@@ -33,11 +34,11 @@ const RequestView = () => {
         <div className="text-left w-4/5">
           <div className="mb-6">
             <p className="text-xl font-semibold pb-4 px-1">Dashboard</p>
-            <RequestInfo data={data}/>
+            {data && <RequestInfo data={data} />}
           </div>
           <div>
-            <p className="text-xl font-semibold pb-4 px-1">Analytics</p>
-            <CollectionForm data={data}/>
+            <p className="text-xl font-semibold pb-4 px-1">Collect Waste</p>
+            {data && (<CollectionForm data={data} />)}
           </div>
         </div>
       </div>

@@ -4,17 +4,21 @@ import React from "react";
 import gmail from "../assets/images/gmail.svg";
 import facebook from "../assets/images/facebook.svg";
 
-import logo from "../assets/images/Logo1.png";
+import logo from "../assets/images/InABin.png";
 import dustbin from "../assets/images/loginImg.jpg";
 // API  Requests
 import { userLogin } from "../service/api";
 
 const Login = () => {
-  1;
+  
+  React.useEffect(()=>{
+    localStorage.clear();
+  },[])
 
   const paramField = React.useRef();
   const passwordField = React.useRef();
   const [showLoginError, setShowLoginError] = React.useState(false);
+
 
   const userLoginFunc = async () => {
     let param = paramField.current.value;
@@ -27,7 +31,7 @@ const Login = () => {
       localStorage.setItem("userId", res.data.id);
       localStorage.setItem("contact", res.data.contact);
       if (res.data.user_type == "user")
-        window.location.href = "/user/dashboard";
+        window.location.href = "/user";
       else if (res.data.user_type == "collector")
         window.location.href = "/collector/dashboard";
     } else setShowLoginError(true);

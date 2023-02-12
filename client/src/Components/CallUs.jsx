@@ -1,7 +1,7 @@
 import { useState } from "react";
 import close from "../assets/images/close.svg";
-import volumeWhite from "../assets/images/volume-white.svg";
-import volumeBlack from "../assets/images/volume-black.svg";
+import call from "../assets/images/callus.png";
+import callGreen from "../assets/images/callGreen.png";
 
 const CallUs = () => {
   const [active, setActive] = useState(false);
@@ -16,7 +16,7 @@ const CallUs = () => {
           className="w-16 h-16 rounded-full bg-green hover:bg-darkGreen duration-200 text-white flex justify-center items-center cursor-pointer shadow-lg p-5"
           onClick={handleClick}
         >
-          <img src={volumeWhite} alt="call" />
+          <img src={call} alt="call" />
         </div>
       )}
 
@@ -29,7 +29,7 @@ const CallUs = () => {
             <div className="flex flex-col gap-8">
               <div>
                 <div className="flex gap-2 items-center">
-                  <img src={volumeWhite} alt="Call" className="w-4 h-4" />
+                  <img src={callGreen} alt="Call" className="w-4 h-4" />
                   <h1 className="font-medium text-green">Call us</h1>
                 </div>
                 <div className="py-2">
@@ -39,7 +39,7 @@ const CallUs = () => {
               </div>
               <div>
                 <div className="flex gap-2 items-center">
-                  <img src={volumeBlack} alt="" className="w-4 h-4" />
+                  <img src={callGreen} alt="" className="w-4 h-4" />
                   <h1 className="font-medium text-green">Email</h1>
                 </div>
                 <div className="py-2">

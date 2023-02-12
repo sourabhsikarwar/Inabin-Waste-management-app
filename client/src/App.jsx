@@ -11,6 +11,7 @@ import UserLanding from './Pages/UserLanding';
 import UserLayout from './Layout/User';
 import CollectorLayout from './Layout/Collector';
 import RequestView from './Components/collector/RequestView';
+import Home from './Pages/store/Home';
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
         <Route path="/collector/:page" element={<CollectorLayout />} />
         <Route path="/collector/:page/:id" element={<CollectorLayout />} />
         <Route path="/collector/request/:id" element={ <RequestView/> }/>
+        <Route path="/store" element={ <Home/> }/>
       </Routes>
     </Router>
     </div>)

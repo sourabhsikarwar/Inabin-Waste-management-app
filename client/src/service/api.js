@@ -31,3 +31,21 @@ export const getRequests = async () => {
     console.log(error.message);
   }
 };
+
+export const getUser = async (id) => {
+  try {
+    const response = await axios.post(`${url}/getUser/${id}`);
+    return response;
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
+export const getAnalytics = async (id) => {
+  try {
+    const response = await axios.get(`${url}/analytics/${id}`);
+    return response;
+  } catch (error) {
+    console.log(error.message);
+  }
+}

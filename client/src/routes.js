@@ -5,12 +5,14 @@ import RequestView from "./Components/collector/RequestView";
 import UserLanding from "./Pages/UserLanding";
 
 import UserProfileComp from "./Components/user/Profile.jsx";
+import CollectionToday from "./Components/collector/CollectionToday";
+import CollectionHistory from "./Components/collector/CollectorHistory";
 
 export const userRoutes = [
   {
     name: "Home",
     path: "/",
-    component: UserLanding
+    component: UserLanding,
   },
   {
     name: "Dashboard",
@@ -50,6 +52,16 @@ export const collectorRoutes = [
     path: "request-pickup",
     component: PickupRequest,
   },
+  {
+    name: "Collection Today",
+    path: "pickups",
+    component: CollectionToday,
+  },
+  {
+    name : "History",
+    path : "history",
+    component : CollectionHistory
+  }
   // {
   //   name: "Request",
   //   path: "request",

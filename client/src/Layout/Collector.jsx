@@ -7,7 +7,7 @@ import Navbar from "../Components/collector/Navbar";
 const CollectorLayout = () => {
   const [component, setComponent] = React.useState(null);
 
-  const { page, id } = useParams();
+  const { page } = useParams();
 
   React.useEffect(() => {
     let user_type = localStorage.getItem("user_type");
@@ -15,6 +15,7 @@ const CollectorLayout = () => {
       window.location.href = "/login";
     }
     const route = collectorRoutes.find((route) => route.path === page);
+  
     if (route) {
       setComponent(route.component);
     }

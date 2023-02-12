@@ -1,6 +1,11 @@
 import mongoose from "mongoose";
 
 const collectionSchema = mongoose.Schema({
+    requestId: {
+        type: String,
+        required: true,
+        unique : true,
+    },
     userName: {
         type: String,
         required: true
@@ -27,19 +32,23 @@ const collectionSchema = mongoose.Schema({
     },
     plastic: {
         type: Number,
-        required: true
+        required: true,
+        default : 0
     },
     paper: {
         type: Number,
         required: true,
+        default : 0
     },
     metal: {
         type: Number,
-        required: true
+        required: true,
+        default : 0
     },
     organic: {
         type: Number,
-        required: true
+        required: true,
+        default : 0
     }
 }, {
     timestamps : true

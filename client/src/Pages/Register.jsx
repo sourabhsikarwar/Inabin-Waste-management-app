@@ -1,12 +1,10 @@
 import React from "react";
 
 //Image
-import wasteman from "../assets/images/Waste management-pana.svg";
-import wasteman2 from "../assets/images/Waste management-rafiki.svg"
 import gmail from "../assets/images/gmail.svg";
 import facebook from "../assets/images/facebook.svg";
 
-import logo from "../assets/images/Logo1.png";
+import logo from "../assets/images/InABin.png";
 import dustbin from "../assets/images/loginImg.jpg";
 
 // API  Requests

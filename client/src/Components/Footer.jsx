@@ -12,7 +12,7 @@ const Footer = () => {
             <p className="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">
               © 2023 inabin —
               <a
-                href="https://twitter.com/knyttneve"
+                href="https://www.instagram.com/theasperteam"
                 rel="noopener noreferrer"
                 className="text-gray-600 ml-1"
                 target="_blank"

@@ -17,7 +17,7 @@ const TWILIO_NUMBER = process.env.TWILIO_NUMBER;
 // get request for all pickups
 export const getRequests = async (req, res) => {
   try {
-    const requests = await Request.find();
+    const requests = await Request.find().sort({ createdAt: "desc" });
     res.status(200).json(requests);
   } catch (error) {
     console.log(error);
@@ -28,9 +28,7 @@ export const getRequests = async (req, res) => {
 // get a particular pickup request
 export const getRequest = async (req, res) => {
   try {
-    console.log(req.body);
     const request = await Request.findById(req.body.id);
-    console.log(request);
     res.status(200).json(request);
   } catch (error) {
     res.status(404).json({ message: error.message });
@@ -47,7 +45,9 @@ export const createRequest = async (req, res) => {
       address: req.body.userAddressValue,
       dateOfCompletion: null,
       status: "started",
+      requestUserID: req.body.reqUserId,
     });
+
     const newRequest = await data.save();
     await client.messages
       .create({
@@ -56,9 +56,9 @@ export const createRequest = async (req, res) => {
         to: `+91${req.body.contactValue}`,
       })
       .then((message) => console.log(message.sid));
-    console.log("F");
     res.status(201).json(newRequest);
   } catch (error) {
+    console.log(error.message);
     res.status(500).json({ message: error.message });
   }
 };
@@ -97,6 +97,7 @@ export const createRequest = async (req, res) => {
 
 export const updateRequest = async (req, res) => {
   try {
+    const ref = await Request.findById(req.params.id);
     const updatedRequest = await Request.findByIdAndUpdate(
       req.params.id,
       {
@@ -104,6 +105,16 @@ export const updateRequest = async (req, res) => {
       },
       { new: true }
     );
+
+    if (ref.status !== req.body.status && req.body.status === "in-progress") {
+      await client.messages
+        .create({
+          body: `Hi ${ref.requestUser}, your request for waste pickup is in progress. Your unique request ID is ${ref._id}. ${req.body.collectorName} will be collecting your waste.`,
+          from: "+13854620884",
+          to: `+91${ref.contact}`,
+        })
+        .then((message) => console.log(message.sid));
+    }
     res.status(200).json(updatedRequest);
   } catch (error) {
     res.status(500).json(error);

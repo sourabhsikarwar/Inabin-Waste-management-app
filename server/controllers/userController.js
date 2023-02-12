@@ -1,4 +1,15 @@
 import User from "../models/userSchema.js";
+import Request from "../models/requestSchema.js";
+import Collection from "../models/collectionSchema.js";
+
+export const getUser = async(request, response) => {
+    try {
+        const user = await User.findById(request.params.id);
+        response.status(200).json(user);
+    } catch (error) {
+        response.status(404).json({ message: error.message });
+    }
+}
 
 // User Login
 // Param : param, password
@@ -59,3 +70,26 @@ export const userRegister = async (request, response) => {
     response.status(500).json({ message: error.message });
   }
 };
+
+
+export const analytics = async (request, response) => {
+  try {
+    console.log(request.params.id);
+    const user = await User.findById(request.params.id);
+    const collected = await Collection.find({collectorId : request.params.id});
+    const req = await Request.find({collectorID : request.params.id});
+    response.status(200).json({p:user.points, c: collected.length, r: req.length});
+  } catch (error) {
+    response.status(404).json({ message: error.message });
+  }
+}
+
+export const deleteAll = async(req,res) => {
+  try {
+    // await Request.deleteMany({});
+    await Collection.deleteMany({});
+    res.json({message : "All users deleted"});
+  } catch (error) {
+    res.status(404).json({message : error.message});
+  }
+}

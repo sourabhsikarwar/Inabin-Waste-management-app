@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { userRoutes } from "../routes";
-import UserSidebar from "../Components/User/UserSidebar.jsx"
+import UserSidebar from "../Components/User/UserSidebar"
 
 
 const UserLayout = () => {

@@ -1,10 +1,9 @@
 import CollectorProfileComp from "./Components/collector/Profile";
-import CollectorDashboard from "./Components/collector/Dashboard.jsx";
+import CollectorDashboard from "./Components/collector/Dashboard";
 import PickupRequest from "./Components/collector/Request";
-import RequestView from "./Components/collector/RequestView";
 import UserLanding from "./Pages/UserLanding";
 
-import UserProfileComp from "./Components/user/Profile.jsx";
+import UserProfileComp from "./Components/User/Profile";
 import CollectionToday from "./Components/collector/CollectionToday";
 import CollectionHistory from "./Components/collector/CollectorHistory";
 

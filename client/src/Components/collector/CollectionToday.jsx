@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import Card from "./Card.jsx";
-import TodayRequests from './TodaysCard.jsx';
+import Card from "./Card";
+import TodayRequests from './TodaysCard';
 
 const CollectionToday = () => {
 

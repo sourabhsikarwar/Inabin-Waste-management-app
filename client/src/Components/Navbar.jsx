@@ -1,21 +1,36 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/images/InABin.png";
+import coin from "../assets/images/rating-white.svg";
 
 const Navbar = () => {
+  const [coins, setCoins] = React.useState(0);
+  React.useEffect(() => {
+    const get = async () => {
+      const id = localStorage.getItem("userId");
+      const res = await getAnalytics(id);
+      if (res) setCoins(res.data.p);
+    };
+    get();
+  }, []);
+
   return (
     <nav className="bg-white px-2 sm:px-4 py-2.5 w-full z-20 border-b border-gray-200">
       <div className="container max-w-7xl flex flex-wrap items-center justify-between mx-auto">
         <Link to="#" className="flex items-center">
           <img src={logo} className="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
         </Link>
-        <div className="flex md:order-2">
-          <button
-            type="button"
+        <div className="flex md:order-2 items-center gap-4">
+        <div className="   items-center gap-1 hidden md:flex">
+            <img src={coin} alt="" className="w-5 bg-green rounded-full h-5" />
+            <div>{coins}</div>
+          </div>
+          <Link
+            to='/store'
             className="text-white bg-green hover:bg-darkGreen focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0"
           >
-            Get started
-          </button>
+            Visit Store
+          </Link>
           <button
             data-collapse-toggle="navbar-sticky"
             type="button"
@@ -54,7 +69,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to="#"
+                to="/user/requests"
                 className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 hover:text-green"
               >
                 Requests
@@ -62,13 +77,20 @@ const Navbar = () => {
             </li>
             <li>
               <a
-                href="/collector/profile"
+                href="/user/profile"
                 className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 hover:text-green"
               >
                 Profile
               </a>
             </li>
+            <li>
+            <div className="items-center gap-2 flex md:hidden px-2">
+            <img src={coin} className="h-5 bg-green w-5 rounded-full" alt="" />
+            <div>{coins}</div>
+          </div>
+            </li>
           </ul>
+          
         </div>
       </div>
     </nav>

@@ -56,15 +56,15 @@ const UserLanding = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative z-0">
       <Navbar />
-      <div className="fixed bottom-0 right-0 m-4">
+      <div className="fixed bottom-0 right-0 m-4 z-10">
         <CallUs />
       </div>
 
       {/* hero section  */}
       <div
-        className='h-full flex'
+        className='h-full flex z-100'
         style={{
           backgroundImage: `url(${banner})`,
           backgroundSize: "cover",

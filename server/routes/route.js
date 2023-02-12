@@ -8,6 +8,7 @@ import {
 } from "../controllers/requestController.js";
 import {
   getCollection,
+  getCollectionByReqId,
   handleCollection,
 } from "../controllers/collectionController.js";
 
@@ -24,5 +25,6 @@ router.post("/user/getRequest", getRequest);
 router.put("/user/updateRequest/:id", updateRequest);
 router.post("/collector/pickups", handleCollection);
 router.get("/collector/history/:id", getCollection);
+router.get("/collector/historyByReq/:id", getCollectionByReqId);
 
 export default router;

@@ -19,9 +19,9 @@ const Analytics = () => {
 
   return (
     <div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
-        <div className="p-4 px-6 shadow-md bg-white rounded-md flex justify-between">
-          <div className="">
+      <div className="p-4 md:p-0 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
+        <div className="py-4 px-6 shadow-md bg-white rounded-md flex justify-between">
+          <div>
             <p className="text-md font-semibold text-gray-700">Pickups</p>
             <p className="text-xl">{analytics ? analytics.c : "--"}</p>
           </div>
@@ -35,7 +35,7 @@ const Analytics = () => {
           <div className="">
             <p className="text-md font-semibold text-gray-700">Accuracy</p>
             <p className="text-xl">
-              85<span classsName="text-sm">%</span>
+              85<span className="text-sm">%</span>
             </p>
           </div>
           <img

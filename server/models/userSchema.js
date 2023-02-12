@@ -21,10 +21,6 @@ const userSchema = mongoose.Schema({
     enum: ["collector", "user"],
     default : "user",
   },
-  uniqueId: {
-    type: Number,
-    required: true,
-  },
   points: {
     type: Number,
     default: 0,

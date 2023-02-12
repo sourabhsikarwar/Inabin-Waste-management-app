@@ -3,21 +3,6 @@ import { useParams } from "react-router-dom";
 import { getRequestData } from "../../service/getRequestInfo";
 
 const RequestInfo = (props) => {
-  // const { id } = useParams();
-  // const [status, setStatus] = useState("Pending");
-  // const [data, setData] = useState({});
-
-  // useEffect(() => {
-  //   const getInfo = async () => {
-  //     try {
-  //       const res = await getRequestData(id);
-  //       setData(res);
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   }
-  //   getInfo();
-  // })
   let tDate
   let date
   if ( props.data && props.data.createdAt) {

@@ -25,10 +25,10 @@ const CollectorLayout = () => {
     <div>
       <Navbar />
       <div className="w-screen flex container max-w-7xl mx-auto py-6">
-        <div className="w-1/5">
+        <div className="hidden md:block w-1/5">
           <Sidebar />
         </div>
-        <div className="text-left w-4/5">
+        <div className="text-left  w-full md:w-4/5">
           <div className="px-6">{component}</div>
         </div>
       </div>

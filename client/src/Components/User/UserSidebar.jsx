@@ -1,6 +1,6 @@
 import React from "react";
 import { userRoutes } from "../../routes";
-import logo from "../../assets/images/Logo1.png"
+import logo from "../../assets/images/InABin.png"
 
 const Logout = ()=>{
   localStorage.removeItem("user_type");
@@ -21,20 +21,20 @@ const UserSidebar = () => {
       </button>
 
       <aside id="default-sidebar" className="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
-        <div className="h-full px-3 py-4 overflow-y-auto bg-darkGreen">
+        <div className="h-full px-3 py-4 overflow-y-auto pt-20">
           <img src={logo} className="h-8 px-4 mb-4" />
           <ul className="space-y-2">
             {userRoutes.map((route, index) => {
               return (
                 <li>
-                  <a href={route.path} className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-green dark:hover:bg-green">
+                  <a href={route.path} className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-blsck hover:bg-green dark:hover:bg-green">
 
                     <span className="ml-3">{route.name}</span>
                   </a>
                 </li>
               )
             })}
-            <li className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-green dark:hover:bg-green cursor-pointer" onClick={Logout}>
+            <li className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-black hover:bg-green dark:hover:bg-green cursor-pointer" onClick={Logout}>
               <p className="ml-3">
                 Logout</p>
             </li>

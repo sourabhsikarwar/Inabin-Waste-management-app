@@ -1,7 +1,6 @@
 import axios from "axios"
 
 const url = "http://localhost:80";
-// get request data 
 
 export const getRequestData = async (params) => {
     try{        

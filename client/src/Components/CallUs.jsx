@@ -13,7 +13,7 @@ const CallUs = () => {
     <>
       {!active && (
         <div
-          className="w-16 h-16 rounded-full bg-green hover:bg-darkGreen duration-200 text-white flex justify-center items-center cursor-pointer shadow-lg p-5"
+          className="w-16 h-16 rounded-full bg-green hover:bg-darkGreen duration-200 text-white flex justify-center items-center cursor-pointer shadow-lg p-5 z-100"
           onClick={handleClick}
         >
           <img src={call} alt="call" />
@@ -21,7 +21,7 @@ const CallUs = () => {
       )}
 
       {active && (
-        <div className="relative rounded-lg w-64 h-72 bg-white shadow-lg">
+        <div className="relative rounded-lg w-64 h-72 bg-white shadow-lg z-100">
           <div
             className="absolute top-0 right-0 p-6 cursor-pointer flex gap-4"
             onClick={handleClick}

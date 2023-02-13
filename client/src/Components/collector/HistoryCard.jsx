@@ -1,5 +1,5 @@
 import React from "react";
-import { getCollection } from "../../service/collect";
+import { getCollectionHistory } from "../../service/collect";
 
 const HistoryCard = () => {
     const [history, setHistory] = React.useState([]);
@@ -8,8 +8,7 @@ const HistoryCard = () => {
         const getHistory = async () => {
             try {
                 const id = localStorage.getItem("userId");
-                const data = await getCollection(id);
-                console.log(data.data);
+                const data = await getCollectionHistory(id);
                 setHistory(data.data);
             } catch (error) {
                 console.log(error);

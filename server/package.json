@@ -5,7 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +16,8 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mongoose": "^6.9.1",
-    "nodemon": "^2.0.20"
+    "node-schedule": "^2.1.1",
+    "nodemon": "^2.0.20",
+    "twilio": "^4.7.2"
   }
 }

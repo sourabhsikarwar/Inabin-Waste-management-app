@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const url = "https://ecell-nitb-hack2k23-team-asper-otfo-git-main-sandeshj-07.vercel.app";
+const url = "https://inabin-waste-management-app.vercel.app";
 
 export const pickRequest = async (params) => {
     try {

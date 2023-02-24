@@ -16,7 +16,7 @@ const Card = (props) => {
       </div>
       <div className='flex flex-col items-center justify-between'>
         <div className='text-gray-400'>{tDate}</div>
-        {props.data.status === "completed" && <button className='bg-green hover:bg-darkGreen py-1 px-4 text-white rounded-lg' onClick={() => window.location.href = `https://inabin-waste-management-app.vercel.app/user/request/${props.data._id}`}>View Report</button>}
+        {props.data.status === "completed" && <button className='bg-green hover:bg-darkGreen py-1 px-4 text-white rounded-lg' onClick={() => window.location.href = `/user/request/${props.data._id}`}>View Report</button>}
       </div>
     </div>
   )

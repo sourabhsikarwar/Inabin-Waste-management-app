@@ -23,7 +23,7 @@ const Navbar = () => {
         <div className="flex md:order-2 items-center gap-4">
           <div className="   items-center gap-1 hidden md:flex">
             <img src={coin} alt="" className="w-5 bg-green rounded-full h-5" />
-            <div>{coins}</div>
+            <div>70</div>
           </div>
           <Link
             to="/store"
@@ -94,7 +94,7 @@ const Navbar = () => {
                   className="h-5 bg-green w-5 rounded-full"
                   alt=""
                 />
-                <div>{coins}</div>
+                <div>70</div>
               </div>
             </li>
             

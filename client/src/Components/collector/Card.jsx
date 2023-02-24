@@ -16,7 +16,7 @@ const Card = (props) => {
       </div>
       <div className='flex flex-col items-center justify-between'>
         <div className='text-gray-400'>{tDate}</div>
-        <button className='bg-green hover:bg-darkGreen py-1 px-4 text-white rounded-lg' onClick={() => window.location.href = `https://inabin-waste-management-app.vercel.app/collector/request/${props.data._id}`}>{props.data.status === "started" ?"View" : "Collect" }</button>
+        <button className='bg-green hover:bg-darkGreen py-1 px-4 text-white rounded-lg' onClick={() => window.location.href = `https://inabin-git-master-sourabhsikarwar.vercel.app/collector/request/${props.data._id}`}>{props.data.status === "started" ?"View" : "Collect" }</button>
       </div>
     </div>
   )
